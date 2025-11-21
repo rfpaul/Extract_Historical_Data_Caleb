@@ -6,7 +6,7 @@
 # This script uses the Phi-3.5-vision-instruct model to extract data from
 # scanned images of historical documents and outputs them directly into a
 # machine-readable format. Comments between two asterisks (**) indicate areas
-# that should be changed to reflect your own data and directory structures
+# that should be changed to reflect your own data and directory structures.
 #
 # Copyright (C) 2025 The Board of Trustees of the University of Illinois
 #
