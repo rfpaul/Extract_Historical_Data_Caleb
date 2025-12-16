@@ -82,7 +82,7 @@ cropping_bboxes = [Image.open(img).getbbox() for img in cropping_bbox_paths]
 for count, src_path in enumerate(src_paths, start=1):
     for i, bbox in enumerate(cropping_bboxes, start=1):
         # Use basename of source image to construct output filename
-        base_filename = path.basename(path.splitext(src_path)[0]
+        base_filename = path.basename(path.splitext(src_path)[0])
         # Construct the output filename...
         if len(cropping_bboxes) > 1:
             dest_filename = f"{base_filename}{multi_crop_prefix}{i}{cropped_suffix}.png"

@@ -1,14 +1,25 @@
 # About
 This repo stores the Python scripting tools to facilitate the digitization of historical documents directly into machine-readable formats such as JSON or CSV using Microsoft's Phi-3.5-Vision-Instruct vision language model.
 
+# Installation Instructions for Image Processing Tools
+**Platform Independent:**
+
+Download and install Miniconda from <https://www.anaconda.com/download/success>, then, in the Terminal/Anaconda Power Shell:
+
+```powershell
+conda create -n Miniconda-Image-Processing pillow poppler pandas scipy -c conda-forge
+conda activate Miniconda-Image-Processing
+pip install pdf2image
+```
+
 # Installation Instructions for Phi-3.5-Vision-Instruct
-## (Windows 11, CUDA v12):
+**Windows 11, CUDA v12:**
 
 Download and unzip `vips-dev-w64-all-8.16.1.zip` from <https://github.com/libvips/build-win64-mxe/releases/tag/v8.16.1>
 
 Move the `vips-dev-8.16` directory to a convenient, permanent place on your C drive. Search your computer from the Windows menu for `Edit environmental variables for your account.` Add the `…\vips-dev-8.16\bin` directory in your Windows Path variables.
 
-Download and install Miniconda from <https://www.anaconda.com/download/success>, then, in the Anaconda Power Shell:
+Download and install Miniconda from <https://www.anaconda.com/download/success> (if you haven't already), then, in the Anaconda Power Shell:
 
 ```powershell
 conda create -n Miniconda-Phi3_5-Viz pytorch einops torchvision torchaudio cudatoolkit transformers=4.49.0 einops accelerate pillow ninja pytorch-cuda=12.1 python=3.11 -c pytorch -c nvidia -c conda-forge
@@ -29,6 +40,6 @@ pip install C:\Users\[your_username]\Downloads\flash_attn-2.7.4.post1+cu124torch
 
 As is typical for a Microsoft product, Phi-3.5-Vision-Instruct ships with bugs. Also, since this specific model is marked as deprecated, it's unlikely that they'll ever fix it. I forked Microsoft's original code and model weights on HuggingFace to [my own HF repo](https://huggingface.co/rfpaul/Phi-3.5-vision-instruct) with the bug fix for `modeling_phi3_v.py` per <https://huggingface.co/microsoft/Phi-3.5-vision-instruct/discussions/39/files>.
 
-And you're finally ready to go! Make sure you run your scripts in the Miniconda-Phi3_5-Viz conda env; they won't work otherwise.
+And you're finally ready to go! Make sure you run the AI model scripts in the Miniconda-Phi3_5-Viz conda env; they won't work otherwise.
 
 Tested and working for Windows 11/CUDA 12.8 on an NVIDIA RTX A2000 12GB
