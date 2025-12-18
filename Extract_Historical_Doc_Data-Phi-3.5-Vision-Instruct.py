@@ -47,6 +47,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 # for best performance, use num_crops=4 for multi-frame, num_crops=16 for single-frame.
+# n.b., this will throw a FutureWarning. That's OK, don't worry about it.
 processor = AutoProcessor.from_pretrained(model_id,
   trust_remote_code=True,
   num_crops=16
